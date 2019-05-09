@@ -1,0 +1,29 @@
+Notas de la explicacion del Proyecto:
+
+(=) -> En Oz es llamado unificacion, lo que comunmente se llama asignacion
+
+<V> de nota un valor
+::= puede ser 
+_ valor no ligado
+<Var> variable
+
+Almacen de asignacion unica:
+
+    En Oz las variables solo pueden tomar un unico valor 
+        y no se puede cambiar.
+
+    X = 10 -> Ya no puede tomar otro valor.
+    X = _ -> X luego puede tomar un valor como por ejemplo X = 20.
+    10 = X -> Es valido.
+
+Para unificar dos registros deben tener la misma etiqueta
+deben tambien tener el mismo numero del campo y los campos deben tener el
+mismo nombre. El orden de los campos no interesan.
+
+    etiqueta(campo1: <V1> .... campon: <Vn>) -> Es un registro.
+
+Para unificar los registros, se unifica cada uno de los campos en el almacen,
+si un campo no se puede unificar entonces la unificacion del registro falla.
+
+Para unificar siempre tratar que quede solo en un nivel de ligamiento.
+
