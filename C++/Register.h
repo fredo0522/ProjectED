@@ -6,6 +6,7 @@
 #define __REGISTER_H
 
 // Este es un comentario
+//comentario de prueba
 
 class Register: public ValorOz{
     private:
