@@ -10,6 +10,9 @@ class Variable: public ValorOz{
         Variable(string, ValorOz);
         ValorOz getValue();
         void setValue(ValorOz);
+        string obtenerCadenaValor();
+        string getName();
+        void setName(string);
 };
 
 #endif

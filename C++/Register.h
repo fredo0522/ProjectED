@@ -5,9 +5,6 @@
 #ifndef __REGISTER_H
 #define __REGISTER_H
 
-// Este es un comentario
-//comentario de prueba
-
 class Register: public ValorOz{
     private:
         string etiqueta;
