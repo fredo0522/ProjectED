@@ -6,7 +6,7 @@ Double::Double(string name, double value){
 }
 
 string Double::obtenerCadenaValor(){
-	string stringValue = to_string(value);
+	string stringValue = to_string(this->value);
 	return stringValue;
 }
 
