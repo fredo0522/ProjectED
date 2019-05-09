@@ -1,6 +1,6 @@
 # ProjectED
 
-Authors:
-  Luis Alfredo Rodriguez
-  Santiago Collantes
+Authors:<br>
+  Luis Alfredo Rodriguez<br>
+  Santiago Collantes<br>
   Gabriella Troncoso
