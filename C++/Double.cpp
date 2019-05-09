@@ -19,7 +19,7 @@ void Double::setValue(double value){
 }
 
 string Double::getName(){
-	return name;
+	return this->name;
 }
 
 void Double::setName(string name){
