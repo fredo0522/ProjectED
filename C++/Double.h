@@ -11,7 +11,6 @@ class Double: public ValorOz{
         string obtenerCadenaValor();
         double getValue();
         void setValue(double);
-        string obtenerCadenaValor();
         string getName();
         void setName(string);
 };
