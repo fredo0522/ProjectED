@@ -22,6 +22,6 @@ string Integer::getName(){
     return this->name;
 }
 
-void Integer::setName(int value){
-    this->value = value;
+void Integer::setName(string name){
+    this->name = name;
 }
