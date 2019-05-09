@@ -11,12 +11,11 @@ class Register: public ValorOz{
         list<ValorOz> field;
         list<string> fieldNames;
     public:
-        Register(string, string, list<ValorOz>, list<string>);
+        Register(string, list<ValorOz>, list<string>);
         string obtenerCadenaValor();
         string obtenerEtiqueta();
         list<string> obtenerCampos();
-        string getName();
-        void setName(string);
+        char type();
 };
 
 #endif

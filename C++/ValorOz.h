@@ -3,17 +3,17 @@
 #ifndef __VALOROZ_H
 #define __VALOROZ_H
 
+#define INTEGER 'I'
+#define DOUBLE 'D'
+#define REGISTER 'R'
+#define VARIABLE 'V'
+
 using namespace std;
 
 class ValorOz{
-    protected:
-        string name;
     public:
-        ValorOz(string);
         virtual string obtenerCadenaValor();
-        virtual string getName();
-        virtual void setName(string);
+        virtual char type();
 };
-
 
 #endif

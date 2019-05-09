@@ -1,7 +1,6 @@
 #include <Integer.h>
 
-Intger::Integer(string name, int value){
-    this->name = name;
+Integer::Integer(int value){
     this->value = value;
 }
 
@@ -18,10 +17,6 @@ void Integer::setValue(int value){
     this->value = value;
 }
 
-string Integer::getName(){
-    return this->name;
-}
-
-void Integer::setName(string name){
-    this->name = name;
+char Integer::type(){
+    return INTEGER;
 }

@@ -1,7 +1,6 @@
 #include <Double.h>
 
-Double::Double(string name, double value){
-	this-> name = name;
+Double::Double(double value){
 	this-> value = value;
 }
 
@@ -18,10 +17,6 @@ void Double::setValue(double value){
 	this->value = value;
 }
 
-string Double::getName(){
-	return this->name;
-}
-
-void Double::setName(string name){
-	this-> name = name;
+char Double::type(){
+    return DOUBLE;
 }

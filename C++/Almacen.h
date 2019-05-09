@@ -14,7 +14,7 @@ class Almacen{
         Almacen();
         Almacen(list<Variable>);
         string imprimirAlmacen();
-        ValorOz consultarVariable(string);
+        ValorOz* consultarVariable(string);
         bool consultarLigadura(string);
         void modificarVariable(string, ValorOz);
         void agregarVariable(string);

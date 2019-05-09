@@ -2,19 +2,21 @@
 
 Variable::Variable(string name, ValorOz value){
     this->name = name;
-    this->value = value;
+    ValorOz* newValue = &value;
+    this->value = newValue;
 }
 
-ValorOz Variable::getValue(){
+ValorOz* Variable::getValue(){
     return this->value;
 }
 
 void Variable::setValue(ValorOz value){
-    this->value = value;
+    ValorOz* newValue = &value;
+    this->value = newValue;
 }
 
 string Variable::obtenerCadenaValor(){
-    return value*->obtenerCadenaValor();
+    return value->obtenerCadenaValor();
 }
 
 string Variable::getName(){
@@ -23,4 +25,8 @@ string Variable::getName(){
 
 void Variable::setName(string name){
     this->name = name;
+}
+
+char Variable::type(){
+    return VARIABLE;
 }

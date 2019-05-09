@@ -7,12 +7,11 @@ class Double: public ValorOz{
     private:
         double value;
     public:
-        Double(string, double);
+        Double(double);
         string obtenerCadenaValor();
         double getValue();
         void setValue(double);
-        string getName();
-        void setName(string);
+        char type();
 };
 
 #endif

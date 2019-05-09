@@ -7,12 +7,11 @@ class Integer: public ValorOz{
     private:
         int value;
     public:
-        Integer(string, int);
+        Integer(int);
         string obtenerCadenaValor();
         int getValue();
         void setValue(int);
-        string getName();
-        void setName(string);
+        char type();
 };
 
 #endif
