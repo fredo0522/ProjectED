@@ -25,4 +25,3 @@ string Integer::getName(){
 void Integer::setName(int value){
     this->value = value;
 }
-
