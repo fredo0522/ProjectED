@@ -15,7 +15,7 @@ int Integer::getValue(){
 }
 
 void Integer::setValue(int value){
-    value = this->value;
+    this->value = value;
 }
 
 string Integer::getName(){

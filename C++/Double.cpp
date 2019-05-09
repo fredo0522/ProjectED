@@ -14,6 +14,7 @@ double Double::getValue(){
 	return this->value;
 }
 void Double::setValue(double value){
-	value = this->value;
+	this->value = value;
 }
+
 
