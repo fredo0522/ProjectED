@@ -5,13 +5,18 @@
 
 class Double: public ValorOz{
     private:
-        double value;
+        double valor;
     public:
+        /* Constructor */
         Double(double);
+
+        /* Metodos de Consulta*/
         string obtenerCadenaValor();
-        double getValue();
-        void setValue(double);
-        char type();
+        double obtenerValor();
+        char tipo();
+
+        /* Modificadores */
+        void modificarValor(double);
 };
 
 #endif

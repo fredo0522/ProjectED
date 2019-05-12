@@ -1,52 +1,50 @@
 #include <Almacen.h>
 
-Almacen::Almacen(){
-    this->store = NULL;
-}
+Almacen::Almacen(){}
 
-Almacen::Almacen(list<Variable> store){
-    this->store = store;
+Almacen::Almacen(list<Variable> variables){
+    this->variables = variables;
 }
 
 string Almacen::imprimirAlmacen(){
     string cadena;
     list<Variable>:: iterator it;
 
-    for(it = store.begin(); it != store.end(); it++)
+    for(it = variables.begin(); it != variables.end(); it++)
         cadena += *it->obtenerCadenaValor() + "\n";
 
     return cadena;
 }
 
-ValorOz Almacen::consultarVariable(string name){
+ValorOz Almacen::consultarVariable(string nombre){
     list<Variable>:: iterator it;
-    for(it = store.begin(); it != store.end(); it++)
-        ValorOz* temp = it->getValue();
-        if(temp->getName() == name)
+    for(it = variables.begin(); it != variables.end(); it++)
+        ValorOz* temp = it->obtenerValor();
+        if(temp->obtenerNombre() == nombre)
             return temp;
     return NULL;
 }
 
-bool Almacen::consultarLigadura(string name){
-    ValorOz* variable = consultarVariable(name);
-    return variable->getValue() != NULL
+bool Almacen::consultarLigadura(string nombre){
+    ValorOz* variable = consultarVariable(nombre);
+    return variable->obtenerValor() != NULL
 }
 
-void  Almacen::modificarVariable(string name, ValorOz oz){
-    ValorOz* variable = consultarVariable(name);
-    variable->setValue(&oz);
+void  Almacen::modificarVariable(string nombre, ValorOz oz){
+    ValorOz* variable = consultarVariable(nombre);
+    variable->modificarValor(&oz);
 }
 
-void Almacen::agregarVariable(string name){
-    Variable variable = Variable(name, NULL);
-    this->store.push_back(variable);
+void Almacen::agregarVariable(string nombre){
+    Variable variable = Variable(nombre, NULL);
+    this->variables.push_back(variable);
 }
 
-list<Variable> getListaVariables(){
-    return this->store;
+list<Variable> obtenerListaVariables(){
+    return this->variables;
 }
 
-// TODO: Metodo de unificacion PORFAAA
+/* TODO: 2019-05-12 Metodo de Unificacion */
 bool Almacen::unificarVariables(ValorOz valor1, ValorOz valor2){
     bool unificado = false;
 

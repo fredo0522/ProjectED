@@ -13,7 +13,8 @@ string Register::obtenerCadenaValor(){
     list<string>::iterator it1;
     list<ValorOz>::iterator it2;
 
-    for(it1 = fieldName.begin(), it2 = field.begin(); it1 != field.end(); it1++,it2++)
+    for(it1 = fieldName.begin(), it2 = field.begin(); it1 != field.end();
+            it1++,it2++)
         cadena += " " + it1* + ":" + it2*->obtenerCadenaValor();
 
     cadena += ")";

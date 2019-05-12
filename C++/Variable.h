@@ -5,16 +5,16 @@
 
 class Variable: public ValorOz{
     private:
-        ValorOz* value;
-        string name;
+        ValorOz* valor;
+        string nombre;
     public:
         Variable(string, ValorOz);
-        ValorOz* getValue();
-        void setValue(ValorOz);
+        ValorOz* obtenerValor();
+        void modificarValor(ValorOz);
         string obtenerCadenaValor();
-        string getName();
-        void setName(string);
-        char type();
+        string obtenerNombre();
+        void modificarNomber(string);
+        char tipo();
 };
 
 #endif

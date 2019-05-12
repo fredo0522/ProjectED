@@ -5,13 +5,18 @@
 
 class Integer: public ValorOz{
     private:
-        int value;
+        int valor;
     public:
+        /* Constructor */
         Integer(int);
+
+        /* Metodos de Consulta */
         string obtenerCadenaValor();
-        int getValue();
-        void setValue(int);
-        char type();
+        int obtenerValor();
+        char tipo();
+
+        /* Modificadores */
+        void modificarValue(int);
 };
 
 #endif

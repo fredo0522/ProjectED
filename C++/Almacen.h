@@ -9,16 +9,21 @@
 
 class Almacen{
     private:
-        list<Variable> store;
+        list<Variable> variables;
     public:
+        /* Constructores */
         Almacen();
         Almacen(list<Variable>);
+
+        /* Metodos de consulta */
         string imprimirAlmacen();
         ValorOz* consultarVariable(string);
         bool consultarLigadura(string);
+        list<Variable> obtenerListaVariables();
+
+        /* Metodos modificadores */
         void modificarVariable(string, ValorOz);
         void agregarVariable(string);
-        list<Variable> getListaVariables();
         bool unificarVariables(ValorOz, ValorOz);
 };
 

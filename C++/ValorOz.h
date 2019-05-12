@@ -3,17 +3,18 @@
 #ifndef __VALOROZ_H
 #define __VALOROZ_H
 
-#define INTEGER 'I'
-#define DOUBLE 'D'
-#define REGISTER 'R'
+#define ENTERO 'I'
+#define DECIMAL 'D'
+#define REGISTRO 'R'
 #define VARIABLE 'V'
 
 using namespace std;
 
 class ValorOz{
     public:
+        /* Metodos virtuales */
         virtual string obtenerCadenaValor();
-        virtual char type();
+        virtual char tipo();
 };
 
 #endif

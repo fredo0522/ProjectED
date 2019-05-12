@@ -8,14 +8,17 @@
 class Register: public ValorOz{
     private:
         string etiqueta;
-        list<ValorOz> field;
-        list<string> fieldNames;
+        list<ValorOz> campos;
+        list<string> nombreCampos;
     public:
+        /* Constructor */
         Register(string, list<ValorOz>, list<string>);
+
+        /* Metodos de consulta */
         string obtenerCadenaValor();
         string obtenerEtiqueta();
         list<string> obtenerCampos();
-        char type();
+        char tipo();
 };
 
 #endif
