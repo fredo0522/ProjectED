@@ -3,6 +3,7 @@
 #ifndef __VALOROZ_H
 #define __VALOROZ_H
 
+/* Constantes */
 #define ENTERO 'I'
 #define DECIMAL 'D'
 #define REGISTRO 'R'

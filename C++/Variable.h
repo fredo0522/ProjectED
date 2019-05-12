@@ -8,13 +8,18 @@ class Variable: public ValorOz{
         ValorOz* valor;
         string nombre;
     public:
+        /* Constructor */
         Variable(string, ValorOz);
+
+        /* Metodos de consulta */
         ValorOz* obtenerValor();
-        void modificarValor(ValorOz);
         string obtenerCadenaValor();
         string obtenerNombre();
-        void modificarNomber(string);
         char tipo();
+
+        /* Metodos modificadores */
+        void modificarValor(ValorOz);
+        void modificarNomber(string);
 };
 
 #endif
