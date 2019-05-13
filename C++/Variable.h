@@ -19,7 +19,7 @@ class Variable: public ValorOz{
 
         /* Metodos modificadores */
         void modificarValor(ValorOz);
-        void modificarNomber(string);
+        void modificarNombre(string);
 };
 
 #endif

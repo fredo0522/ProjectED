@@ -1,32 +1,32 @@
 #include <Variable.h>
 
-Variable::Variable(string name, ValorOz value){
+Variable::Variable(string name, ValorOz valor){
     this->name = name;
-    ValorOz* newValue = &value;
-    this->value = newValue;
+    ValorOz* newValue = &valor;
+    this->valor = newValue;
 }
 
 ValorOz* Variable::getValue(){
-    return this->value;
+    return this->valor;
 }
 
-void Variable::setValue(ValorOz value){
-    ValorOz* newValue = &value;
-    this->value = newValue;
+void Variable::modificarValor(ValorOz valor){
+    ValorOz* nuevoValor = &valor;
+    this->valor = nuevoValor;
 }
 
 string Variable::obtenerCadenaValor(){
-    return value->obtenerCadenaValor();
+    return valor->obtenerCadenaValor();
 }
 
-string Variable::getName(){
-    return this->name;
+string Variable::obtenerNombre(){
+    return this->nombre;
 }
 
-void Variable::setName(string name){
-    this->name = name;
+void Variable::modificarNombre(string nombre){
+    this->nombre = nombre;
 }
 
-char Variable::type(){
+char Variable::tipo(){
     return VARIABLE;
 }

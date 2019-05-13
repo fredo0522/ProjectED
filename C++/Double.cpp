@@ -5,18 +5,17 @@ Double::Double(double value){
 }
 
 string Double::obtenerCadenaValor(){
-	string stringValue = to_string(this->value);
-	return stringValue;
+	return to_string(this->valor);
 }
 
-double Double::getValue(){
-	return this->value;
+double Double::obtenerValor(){
+	return this->valor;
 }
 
-void Double::setValue(double value){
-	this->value = value;
+void Double::modificarValor(double valor){
+	this->valor = valor;
 }
 
-char Double::type(){
-    return DOUBLE;
+char Double::tipo(){
+    return DECIMAL;
 }

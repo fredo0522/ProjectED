@@ -1,10 +1,9 @@
 #include <Register.h>
 
-Register::Register(string etiqueta, list<ValorOz> field,
-        list<string> fieldName){
+Register::Register(string etiqueta, list<ValorOz> campos, list<string> nombreCampos){
     this->etiqueta = etiqueta;
-    this->field = field;
-    this->fieldName = fieldName;
+    this->campos = campos;
+    this->nombreCampos = nombreCampos;
 }
 
 string Register::obtenerCadenaValor(){
@@ -15,7 +14,7 @@ string Register::obtenerCadenaValor(){
 
     for(it1 = fieldName.begin(), it2 = field.begin(); it1 != field.end();
             it1++,it2++)
-        cadena += " " + it1* + ":" + it2*->obtenerCadenaValor();
+        cadena += " " + *it1 + ":" + *it2->obtenerCadenaValor();
 
     cadena += ")";
     return cadena;
@@ -26,9 +25,9 @@ string Register::obtenerEtiqueta(){
 }
 
 list<string> Register::obtenerCampos(){
-    return this->field;
+    return this->campos;
 }
 
-char Register::type(){
-    return REGISTER;
+char Register::tipo(){
+    return REGISTRO;
 }

@@ -19,8 +19,7 @@ string Almacen::imprimirAlmacen(){
 ValorOz Almacen::consultarVariable(string nombre){
     list<Variable>:: iterator it;
     for(it = variables.begin(); it != variables.end(); it++)
-        ValorOz* temp = it->obtenerValor();
-        if(temp->obtenerNombre() == nombre)
+        if(*it->obtenerNombre() == nombre)
             return temp;
     return NULL;
 }

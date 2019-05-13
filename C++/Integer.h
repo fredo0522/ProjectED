@@ -16,7 +16,7 @@ class Integer: public ValorOz{
         char tipo();
 
         /* Modificadores */
-        void modificarValue(int);
+        void modificarValor(int);
 };
 
 #endif

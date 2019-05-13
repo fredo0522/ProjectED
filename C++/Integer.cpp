@@ -5,18 +5,17 @@ Integer::Integer(int value){
 }
 
 string Integer::obtenerCadenaValor(){
-    string stringValue = to_string(this->value);
-    return stringValue;
+    return to_string(this->valor);
 }
 
-int Integer::getValue(){
-    return this->value;
+int Integer::obtenerValor(){
+    return this->valor;
 }
 
-void Integer::setValue(int value){
-    this->value = value;
+void Integer::modificarValor(int valor){
+    this->valor = valor;
 }
 
-char Integer::type(){
-    return INTEGER;
+char Integer::tipo(){
+    return ENTERO;
 }
