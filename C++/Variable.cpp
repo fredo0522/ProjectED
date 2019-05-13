@@ -1,4 +1,4 @@
-#include <Variable.h>
+#include "Variable.h"
 
 Variable::Variable(string name, ValorOz valor){
     this->name = name;
@@ -16,6 +16,7 @@ void Variable::modificarValor(ValorOz valor){
 }
 
 string Variable::obtenerCadenaValor(){
+    if(this->valor == NULL) return "_";
     return valor->obtenerCadenaValor();
 }
 

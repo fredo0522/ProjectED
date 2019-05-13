@@ -1,37 +1,41 @@
-#include <Almacen.h>
+#include "Almacen.h"
 
-Almacen::Almacen(){}
+Almacen::Almacen(){
+    this->variables = list<Variable>();
+}
 
 Almacen::Almacen(list<Variable> variables){
     this->variables = variables;
 }
 
 string Almacen::imprimirAlmacen(){
-    string cadena;
+    string cadena = "";
     list<Variable>:: iterator it;
 
-    for(it = variables.begin(); it != variables.end(); it++)
+    for(it = variables.begin(); it != variables.end(); it++){
+        cadena += *it->obtenerNombre() + "-> ";
         cadena += *it->obtenerCadenaValor() + "\n";
+    }
 
     return cadena;
 }
 
-ValorOz Almacen::consultarVariable(string nombre){
+Variable Almacen::consultarVariable(string nombre){
     list<Variable>:: iterator it;
     for(it = variables.begin(); it != variables.end(); it++)
         if(*it->obtenerNombre() == nombre)
-            return temp;
+            return *it;
     return NULL;
 }
 
 bool Almacen::consultarLigadura(string nombre){
-    ValorOz* variable = consultarVariable(nombre);
-    return variable->obtenerValor() != NULL
+    Variable variable = consultarVariable(nombre);
+    return variable.obtenerValor() != NULL
 }
 
 void  Almacen::modificarVariable(string nombre, ValorOz oz){
-    ValorOz* variable = consultarVariable(nombre);
-    variable->modificarValor(&oz);
+    ValorOz variable = consultarVariable(nombre);
+    variable.modificarValor(oz);
 }
 
 void Almacen::agregarVariable(string nombre){

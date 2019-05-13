@@ -1,4 +1,4 @@
-#include <Register.h>
+#include "Register.h"
 
 Register::Register(string etiqueta, list<ValorOz> campos, list<string> nombreCampos){
     this->etiqueta = etiqueta;

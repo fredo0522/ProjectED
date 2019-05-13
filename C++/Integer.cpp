@@ -1,7 +1,7 @@
-#include <Integer.h>
+#include "Integer.h"
 
-Integer::Integer(int value){
-    this->value = value;
+Integer::Integer(int valor){
+    this->valor = valor;
 }
 
 string Integer::obtenerCadenaValor(){

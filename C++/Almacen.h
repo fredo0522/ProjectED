@@ -1,8 +1,8 @@
-#include <ValorOz.h>
-#include <Register.h>
-#include <Variable.h>
-#include <Integer.h>
-#include <Double.h>
+#include "ValorOz.h"
+#include "Integer.h"
+#include "Double.h"
+#include "Register.h"
+#include "Variable.h"
 
 #ifndef __ALMACEN_H
 #define __ALMACEN_H
