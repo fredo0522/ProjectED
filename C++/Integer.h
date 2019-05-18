@@ -1,4 +1,5 @@
 #include "ValorOz.h"
+#include <string>
 
 #ifndef __INTEGER_H
 #define __INTEGER_H

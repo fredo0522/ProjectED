@@ -1,12 +1,22 @@
-#include "ValorOz.h"
+/*#include "ValorOz.h"
 #include "Double.h"
-#include "Integer.h"
 #include "Register.h"
 #include "Variable.h"
 #include "Almacen.h"
 #include <iostream>
 #include <list>
 #include <iterator>
+*/
+#include "ValorOz.h"
+#include "Integer.h"
+#include <iostream>
+
+
+using namespace std;
+
+/* TODO: 2019-05-18 Hacer clase Variable no ligada, acomodar todas las includes
+ * y ValorOz agregar char tipo como atributo, adicionalmente -> poner todo lo que viene
+ * con eso en las demas clases */
 
 /* TODO: 2019-05-12 Not working(error: Undefined reference to Class::Class) */
 int main(){

@@ -1,7 +1,10 @@
 #include "ValorOz.h"
+#include <string>
 
 #ifndef __DOUBLE_H
 #define __DOUBLE_H
+
+using namespace std;
 
 class Double: public ValorOz{
     private:
