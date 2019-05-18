@@ -10,14 +10,14 @@
 
 /* TODO: 2019-05-12 Not working(error: Undefined reference to Class::Class) */
 int main(){
-    list<Variable> lista;
+    //list<Variable> lista;
 
-    Integer valor(10);
-    Variable robert("Alejandro", valor);
-    lista.push_back(robert);
-
-    Almacen almacen = Almacen(lista);
-    cout << almacen.imprimirAlmacen() << endl;
+    Integer valor = Integer(10);
+    //Variable robert("Alejandro", valor);
+    //lista.push_back(robert);
+    cout << valor.obtenerCadenaValor() << endl;
+    //Almacen almacen = Almacen(lista);
+    //cout << almacen.imprimirAlmacen() << endl;
     return 0;
 }
 

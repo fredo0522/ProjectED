@@ -13,8 +13,8 @@ string Almacen::imprimirAlmacen(){
     list<Variable>:: iterator it;
 
     for(it = variables.begin(); it != variables.end(); it++){
-        cadena += *it->obtenerNombre() + "-> ";
-        cadena += *it->obtenerCadenaValor() + "\n";
+        cadena += it->obtenerNombre() + "-> ";
+        cadena += it->obtenerCadenaValor() + "\n";
     }
 
     return cadena;
@@ -23,8 +23,8 @@ string Almacen::imprimirAlmacen(){
 Variable Almacen::consultarVariable(string nombre){
     list<Variable>:: iterator it;
     for(it = variables.begin(); it != variables.end(); it++)
-        if(*it->obtenerNombre() == nombre)
-            return *it;
+        if(it->obtenerNombre() == nombre)
+            return it;
     return NULL;
 }
 

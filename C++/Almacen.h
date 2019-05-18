@@ -17,7 +17,7 @@ class Almacen{
 
         /* Metodos de consulta */
         string imprimirAlmacen();
-        ValorOz* consultarVariable(string);
+        Variable consultarVariable(string);
         bool consultarLigadura(string);
         list<Variable> obtenerListaVariables();
 
