@@ -3,13 +3,19 @@
 #include "Double.h"
 #include "Register.h"
 #include "Variable.h"
+#include "variableNoLigada.h"
+#include <string>
+#include <list>
+#include <iterator>
 
 #ifndef __ALMACEN_H
 #define __ALMACEN_H
 
+using namespace std;
+
 class Almacen{
     private:
-        list<Variable> variables;
+        list<Variable*> variables;
     public:
         /* Constructores */
         Almacen();
@@ -17,7 +23,7 @@ class Almacen{
 
         /* Metodos de consulta */
         string imprimirAlmacen();
-        Variable consultarVariable(string);
+        Variable* consultarVariable(string);
         bool consultarLigadura(string);
         list<Variable> obtenerListaVariables();
 

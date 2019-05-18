@@ -1,22 +1,21 @@
 #include "Variable.h"
 
 Variable::Variable(string name, ValorOz valor){
-    this->name = name;
-    ValorOz* newValue = &valor;
-    this->valor = newValue;
+this->name = name;
+ValorOz* newValue = &valor;
+this->valor = newValue;
+this->tipo = VARIABLE;
 }
 
-ValorOz* Variable::getValue(){
+ValorOz Variable::getValue(){
     return this->valor;
 }
 
 void Variable::modificarValor(ValorOz valor){
-    ValorOz* nuevoValor = &valor;
-    this->valor = nuevoValor;
+    this->valor = valor;
 }
 
 string Variable::obtenerCadenaValor(){
-    if(this->valor == NULL) return "_";
     return valor->obtenerCadenaValor();
 }
 
@@ -29,5 +28,5 @@ void Variable::modificarNombre(string nombre){
 }
 
 char Variable::tipo(){
-    return VARIABLE;
+    return this->tipo;
 }

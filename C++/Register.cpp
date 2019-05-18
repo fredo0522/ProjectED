@@ -4,6 +4,7 @@ Register::Register(string etiqueta, list<ValorOz> campos, list<string> nombreCam
     this->etiqueta = etiqueta;
     this->campos = campos;
     this->nombreCampos = nombreCampos;
+    this-> tipo = REGISTRO;
 }
 
 string Register::obtenerCadenaValor(){
@@ -29,5 +30,5 @@ list<string> Register::obtenerCampos(){
 }
 
 char Register::tipo(){
-    return REGISTRO;
+    return this->tipo;
 }

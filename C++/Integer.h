@@ -4,6 +4,8 @@
 #ifndef __INTEGER_H
 #define __INTEGER_H
 
+using namespace std;
+
 class Integer: public ValorOz{
     private:
         int valor;

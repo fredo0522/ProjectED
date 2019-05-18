@@ -2,6 +2,7 @@
 
 Double::Double(double value){
 	this-> value = value;
+    this-> tipo = DECIMAL;
 }
 
 string Double::obtenerCadenaValor(){
@@ -17,5 +18,5 @@ void Double::modificarValor(double valor){
 }
 
 char Double::tipo(){
-    return DECIMAL;
+    return this->tipo;
 }

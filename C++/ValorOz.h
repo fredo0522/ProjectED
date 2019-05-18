@@ -8,6 +8,7 @@
 #define DECIMAL 'D'
 #define REGISTRO 'R'
 #define VARIABLE 'V'
+#define NO_LIGADO 'N'
 
 using namespace std;
 

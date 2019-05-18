@@ -1,9 +1,12 @@
 #include "ValorOz.h"
 #include <list>
 #include <iterator>
+#include <string>
 
 #ifndef __REGISTER_H
 #define __REGISTER_H
+
+using namespace std;
 
 class Register: public ValorOz{
     private:

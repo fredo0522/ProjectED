@@ -1,18 +1,21 @@
 #include "ValorOz.h"
+#include <string>
 
 #ifndef __VARIABLE_H
 #define __VARIABLE_H
 
+using namespace std;
+
 class Variable: public ValorOz{
     private:
-        ValorOz* valor;
+        ValorOz valor;
         string nombre;
     public:
         /* Constructor */
         Variable(string, ValorOz);
 
         /* Metodos de consulta */
-        ValorOz* obtenerValor();
+        ValorOz obtenerValor();
         string obtenerCadenaValor();
         string obtenerNombre();
         char tipo();

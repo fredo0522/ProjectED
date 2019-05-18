@@ -20,26 +20,29 @@ string Almacen::imprimirAlmacen(){
     return cadena;
 }
 
-Variable Almacen::consultarVariable(string nombre){
-    list<Variable>:: iterator it;
+Variable* Almacen::consultarVariable(string nombre){
+    list<Variable*>:: iterator it;
     for(it = variables.begin(); it != variables.end(); it++)
         if(it->obtenerNombre() == nombre)
-            return it;
+            return *it;
     return NULL;
 }
 
 bool Almacen::consultarLigadura(string nombre){
-    Variable variable = consultarVariable(nombre);
-    return variable.obtenerValor() != NULL
+    Variable* variable = consultarVariable(nombre);
+    if(variable != NULL){
+        return *variable->obtenerCadenaValor() != "_"
+    }
+    return false;
 }
 
 void  Almacen::modificarVariable(string nombre, ValorOz oz){
-    ValorOz variable = consultarVariable(nombre);
-    variable.modificarValor(oz);
+    Variable* variable = consultarVariable(nombre);
+    *variable->modificarValor(oz);
 }
 
 void Almacen::agregarVariable(string nombre){
-    Variable variable = Variable(nombre, NULL);
+    Variable* variable = new Variable(nombre, VariableNoLigada());
     this->variables.push_back(variable);
 }
 

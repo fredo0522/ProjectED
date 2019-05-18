@@ -2,6 +2,7 @@
 
 Integer::Integer(int valor){
     this->valor = valor;
+    this->tipo = ENTERO;
 }
 
 string Integer::obtenerCadenaValor(){
