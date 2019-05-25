@@ -7,6 +7,7 @@
 #include <string>
 #include <list>
 #include <iterator>
+#include <set>
 
 #ifndef __ALMACEN_H
 #define __ALMACEN_H
@@ -16,6 +17,7 @@ using namespace std;
 class Almacen{
     private:
         list<Variable*> variables;
+        set<Variables> comparison;
     public:
         /* Constructores */
         Almacen();

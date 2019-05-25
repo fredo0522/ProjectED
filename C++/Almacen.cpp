@@ -10,11 +10,11 @@ Almacen::Almacen(list<Variable> variables){
 
 string Almacen::imprimirAlmacen(){
     string cadena = "";
-    list<Variable>:: iterator it;
+    list<Variable*>:: iterator it;
 
     for(it = variables.begin(); it != variables.end(); it++){
-        cadena += it->obtenerNombre() + "-> ";
-        cadena += it->obtenerCadenaValor() + "\n";
+        cadena += *it->obtenerNombre() + "-> ";
+        cadena += *it->obtenerCadenaValor() + "\n";
     }
 
     return cadena;
@@ -23,7 +23,7 @@ string Almacen::imprimirAlmacen(){
 Variable* Almacen::consultarVariable(string nombre){
     list<Variable*>:: iterator it;
     for(it = variables.begin(); it != variables.end(); it++)
-        if(it->obtenerNombre() == nombre)
+        if(*it->obtenerNombre() == nombre)
             return *it;
     return NULL;
 }
@@ -31,19 +31,19 @@ Variable* Almacen::consultarVariable(string nombre){
 bool Almacen::consultarLigadura(string nombre){
     Variable* variable = consultarVariable(nombre);
     if(variable != NULL){
-        return *variable->obtenerCadenaValor() != "_"
+        return variable->obtenerCadenaValor() != "_"
     }
     return false;
 }
 
 void  Almacen::modificarVariable(string nombre, ValorOz oz){
     Variable* variable = consultarVariable(nombre);
-    *variable->modificarValor(oz);
+    variable->modificarValor(oz);
 }
 
 void Almacen::agregarVariable(string nombre){
     Variable* variable = new Variable(nombre, VariableNoLigada());
-    this->variables.push_back(variable);
+    this->variables.push_back(&variable);
 }
 
 list<Variable> obtenerListaVariables(){
