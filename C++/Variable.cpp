@@ -7,7 +7,7 @@ this->valor = newValue;
 this->tipo = VARIABLE;
 }
 
-ValorOz Variable::getValue(){
+ValorOz Variable::obtenerValor(){
     return this->valor;
 }
 
