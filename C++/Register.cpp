@@ -8,7 +8,7 @@ Register::Register(string etiqueta, list<ValorOz> campos, list<string> nombreCam
 }
 
 string Register::obtenerCadenaValor(){
-    string cadena = etiqueta + "(";
+    string cadena = etiqueta + '(';
 
     list<string>::iterator it1;
     list<ValorOz>::iterator it2;
@@ -17,7 +17,7 @@ string Register::obtenerCadenaValor(){
             it1++,it2++)
         cadena += " " + it1 + ":" + it2->obtenerCadenaValor();
 
-    cadena += ")";
+    cadena += ')';
     return cadena;
 }
 
