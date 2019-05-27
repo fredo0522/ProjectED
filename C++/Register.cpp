@@ -19,7 +19,7 @@ string Register::obtenerCadenaValor(){
     list<ValorOz*>::iterator it2;
 
     for(it1 = nombreCampos.begin(), it2 = campos.begin(); it2 != campos.end(); it1++,it2++){
-        cadena += " " + *it1 + ": ";
+        cadena += " " + *it1 + ":";
 
         if((*it2)->tipo() == ENTERO){
             Integer* valorExacto = (Integer*) *it2;
@@ -40,7 +40,7 @@ string Register::obtenerCadenaValor(){
 
     }
 
-    cadena += ')';
+    cadena += " )";
     return cadena;
 }
 

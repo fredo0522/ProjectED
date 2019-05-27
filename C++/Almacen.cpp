@@ -19,7 +19,7 @@ string Almacen::imprimirAlmacen(){
     list<Variable*>:: iterator it;
 
     for(it = variables.begin(); it != variables.end(); it++){
-        cadena += (*it)->obtenerNombre() + "-> ";
+        cadena += (*it)->obtenerNombre() + " = ";
         cadena += (*it)->obtenerCadenaValor() + "\n";
     }
 
@@ -49,8 +49,8 @@ void Almacen::modificarVariable(string nombre, ValorOz* oz){
 
 void Almacen::agregarVariable(string nombre){
 
-    ValorOz* ptr = new ValorNoLigado;
-    ValorOz* ptr2 = new Variable;
+    VariableNoLigada* ptr = new VariableNoLigada;
+    Variable* ptr2 = new Variable;
 
     ptr2->modificarNombre(nombre);
     ptr2->modificarValor(ptr);

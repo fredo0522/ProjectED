@@ -5,6 +5,8 @@
 #include "Register.h"
 #include "variableNoLigada.h"
 
+Variable::Variable(){}
+
 Variable::Variable(string name, ValorOz* valor){
     this->nombre = name;
     this->valor = valor;

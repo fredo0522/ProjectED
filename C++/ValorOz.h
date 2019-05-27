@@ -17,8 +17,8 @@ class ValorOz{
         char tipoDato;
     public:
         /* Metodos virtuales */
-        virtual string obtenerCadenaValor() const = 0;
-        virtual char tipo() const = 0;
+        virtual string obtenerCadenaValor() = 0;
+        virtual char tipo() = 0;
 };
 
 #endif
