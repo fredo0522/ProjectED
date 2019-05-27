@@ -48,14 +48,12 @@ void  Almacen::modificarVariable(string nombre, ValorOz* oz){
 }
 
 void Almacen::agregarVariable(string nombre){
-    VariableNoLigada valorNoLigado;
-    VariableNoLigada* ptr = &valorNoLigado;
 
-    Variable nuevaVariable;
-    Variable* ptr2 = &nuevaVariable;
+    ValorOz* ptr = new ValorNoLigado;
+    ValorOz* ptr2 = new Variable;
 
-    ptr2->modificarValor(ptr);
     ptr2->modificarNombre(nombre);
+    ptr2->modificarValor(ptr);
 
     this->variables.push_back(ptr2);
 }
