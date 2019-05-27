@@ -11,16 +11,16 @@ using namespace std;
 class Register: public ValorOz{
     private:
         string etiqueta;
-        list<ValorOz> campos;
+        list<ValorOz*> campos;
         list<string> nombreCampos;
     public:
         /* Constructor */
-        Register(string, list<ValorOz>, list<string>);
+        Register(string, list<ValorOz*>, list<string>);
 
         /* Metodos de consulta */
         string obtenerCadenaValor();
         string obtenerEtiqueta();
-        list<string> obtenerCampos();
+        list<ValorOz*> obtenerCampos();
         char tipo();
 };
 

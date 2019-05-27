@@ -1,10 +1,10 @@
 #include "Almacen.h"
 
 Almacen::Almacen(){
-    this->variables = list<Variable>();
+    this->variables = list<Variable*>();
 }
 
-Almacen::Almacen(list<Variable> variables){
+Almacen::Almacen(list<Variable*> variables){
     this->variables = variables;
 }
 
@@ -31,7 +31,7 @@ Variable* Almacen::consultarVariable(string nombre){
 bool Almacen::consultarLigadura(string nombre){
     Variable* variable = consultarVariable(nombre);
     if(variable != NULL){
-        return variable->obtenerCadenaValor() != "_"
+        return variable->obtenerCadenaValor() != "_";
     }
     return false;
 }

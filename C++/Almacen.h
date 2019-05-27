@@ -17,17 +17,17 @@ using namespace std;
 class Almacen{
     private:
         list<Variable*> variables;
-        set<Variables> comparison;
+        set<Variable*> comparison;
     public:
         /* Constructores */
         Almacen();
-        Almacen(list<Variable>);
+        Almacen(list<Variable*>);
 
         /* Metodos de consulta */
         string imprimirAlmacen();
         Variable* consultarVariable(string);
         bool consultarLigadura(string);
-        list<Variable> obtenerListaVariables();
+        list<Variable*> obtenerListaVariables();
 
         /* Metodos modificadores */
         void modificarVariable(string, ValorOz);

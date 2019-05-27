@@ -2,7 +2,7 @@
 
 Integer::Integer(int valor){
     this->valor = valor;
-    this->tipo = ENTERO;
+    this->tipoDato = ENTERO;
 }
 
 string Integer::obtenerCadenaValor(){
@@ -18,5 +18,5 @@ void Integer::modificarValor(int valor){
 }
 
 char Integer::tipo(){
-    return ENTERO;
+    return tipoDato;
 }

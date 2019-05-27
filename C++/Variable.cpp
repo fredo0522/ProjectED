@@ -1,22 +1,57 @@
+#include "ValorOz.h"
 #include "Variable.h"
+#include "Integer.h"
+#include "Doble.h"
+#include "Register.h"
+#include "variableNoLigada.h"
 
-Variable::Variable(string name, ValorOz valor){
-this->name = name;
-ValorOz* newValue = &valor;
-this->valor = newValue;
-this->tipo = VARIABLE;
+Variable::Variable(string name, ValorOz* valor){
+    this->nombre = name;
+    this->valor = valor;
+    this->tipoDato = VARIABLE;
 }
 
-ValorOz Variable::obtenerValor(){
+ValorOz* Variable::obtenerValor(){
     return this->valor;
 }
 
-void Variable::modificarValor(ValorOz valor){
-    this->valor = valor;
+void Variable::modificarValor(ValorOz* valor){
+    if(valor->tipo() == ENTERO){
+        Integer* valorExacto = (Integer*) valor;
+        this->valor = valorExacto;
+    }else if(valor->tipo() == DECIMAL){
+        Doble* valorExacto = (Doble*) valor;
+        this->valor = valorExacto;
+    }else if (valor->tipo() == REGISTRO){
+        Register* valorExacto = (Register*) valor;
+        this->valor = valorExacto;
+    }else if (valor->tipo() == VARIABLE){
+        Variable* valorExacto = (Variable*) valor;
+        this->valor = valorExacto;
+    }else{
+        VariableNoLigada* valorExacto = (VariableNoLigada*) valor;
+        this->valor = valorExacto;
+    }
+
 }
 
 string Variable::obtenerCadenaValor(){
-    return valor->obtenerCadenaValor();
+    if(valor->tipo() == ENTERO){
+        Integer* valorExacto = (Integer*) valor;
+        return valorExacto->obtenerCadenaValor();
+    }else if(valor->tipo() == DECIMAL){
+        Doble* valorExacto = (Doble*) valor;
+        return valorExacto->obtenerCadenaValor();
+    }else if (valor->tipo() == REGISTRO){
+        Register* valorExacto = (Register*) valor;
+        return valorExacto->obtenerCadenaValor();
+    }else if (valor->tipo() == VARIABLE){
+        Variable* valorExacto = (Variable*) valor;
+        return valorExacto->obtenerCadenaValor();
+    }else{
+        VariableNoLigada* valorExacto = (VariableNoLigada*) valor;
+        return valorExacto->obtenerCadenaValor();
+    }
 }
 
 string Variable::obtenerNombre(){
@@ -28,5 +63,5 @@ void Variable::modificarNombre(string nombre){
 }
 
 char Variable::tipo(){
-    return this->tipo;
+    return this->tipoDato;
 }

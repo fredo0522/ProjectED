@@ -14,11 +14,11 @@ using namespace std;
 
 class ValorOz{
     protected:
-        char tipo;
+        char tipoDato;
     public:
         /* Metodos virtuales */
-        virtual string obtenerCadenaValor() = 0;
-        virtual char tipo() = 0;
+        virtual string obtenerCadenaValor() const = 0;
+        virtual char tipo() const = 0;
 };
 
 #endif

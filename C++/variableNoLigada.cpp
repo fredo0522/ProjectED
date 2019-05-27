@@ -1,7 +1,7 @@
 #include "variableNoLigada.h"
 
 VariableNoLigada::VariableNoLigada(){
-    this->tipo = NO_LIGADO;
+    this->tipoDato = NO_LIGADO;
     this->valor = "_";
 }
 
@@ -10,6 +10,6 @@ string VariableNoLigada::obtenerCadenaValor(){
 }
 
 char VariableNoLigada::tipo(){
-    return this->tipo;
+    return this->tipoDato;
 }
 

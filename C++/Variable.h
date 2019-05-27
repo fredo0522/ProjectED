@@ -8,20 +8,20 @@ using namespace std;
 
 class Variable: public ValorOz{
     private:
-        ValorOz valor;
+        ValorOz* valor;
         string nombre;
     public:
         /* Constructor */
-        Variable(string, ValorOz);
+        Variable(string, ValorOz*);
 
         /* Metodos de consulta */
-        ValorOz obtenerValor();
+        ValorOz* obtenerValor();
         string obtenerCadenaValor();
         string obtenerNombre();
         char tipo();
 
         /* Metodos modificadores */
-        void modificarValor(ValorOz);
+        void modificarValor(ValorOz*);
         void modificarNombre(string);
 };
 

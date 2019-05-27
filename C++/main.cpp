@@ -1,14 +1,12 @@
-/*#include "ValorOz.h"
-#include "Double.h"
+#include "ValorOz.h"
+#include "Doble.h"
 #include "Register.h"
 #include "Variable.h"
+#include "Integer.h"
 #include "Almacen.h"
 #include <iostream>
 #include <list>
 #include <iterator>
-*/
-#include "ValorOz.h"
-#include "Integer.h"
 #include <iostream>
 
 
@@ -20,14 +18,16 @@ using namespace std;
 
 /* TODO: 2019-05-12 Not working(error: Undefined reference to Class::Class) */
 int main(){
-    //list<Variable> lista;
+    list<Variable*> lista;
 
     Integer valor = Integer(10);
-    //Variable robert("Alejandro", valor);
-    //lista.push_back(robert);
+    Variable* alejandro = Variable("Alejandro", (ValorOz)valor);
+    lista.push_back(alejandro);
+
     cout << valor.obtenerCadenaValor() << endl;
-    //Almacen almacen = Almacen(lista);
-    //cout << almacen.imprimirAlmacen() << endl;
+    Almacen almacen = Almacen(lista);
+    cout << almacen.imprimirAlmacen() << endl;
+
     return 0;
 }
 
