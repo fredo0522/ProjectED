@@ -12,6 +12,7 @@ class Variable: public ValorOz{
         string nombre;
     public:
         /* Constructor */
+        Variable();
         Variable(string, ValorOz*);
 
         /* Metodos de consulta */

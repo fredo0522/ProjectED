@@ -16,6 +16,7 @@ class VariableNoLigada: public ValorOz{
         /* Metodos de obtencion */
         char tipo();
         string obtenerCadenaValor();
+        string obtenerValor();
 };
 
 #endif

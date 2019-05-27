@@ -32,7 +32,6 @@ void Variable::modificarValor(ValorOz* valor){
         VariableNoLigada* valorExacto = (VariableNoLigada*) valor;
         this->valor = valorExacto;
     }
-
 }
 
 string Variable::obtenerCadenaValor(){
@@ -58,8 +57,8 @@ string Variable::obtenerNombre(){
     return this->nombre;
 }
 
-void Variable::modificarNombre(string nombre){
-    this->nombre = nombre;
+void Variable::modificarNombre(string name){
+    this->nombre = name;
 }
 
 char Variable::tipo(){

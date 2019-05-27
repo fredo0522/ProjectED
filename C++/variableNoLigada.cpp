@@ -13,3 +13,7 @@ char VariableNoLigada::tipo(){
     return this->tipoDato;
 }
 
+string VariableNoLigada::obtenerValor(){
+    return this->valor;
+}
+

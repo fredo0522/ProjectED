@@ -1,4 +1,10 @@
 #include "Almacen.h"
+#include "ValorOz.h"
+#include "Variable.h"
+#include "Integer.h"
+#include "Doble.h"
+#include "Register.h"
+#include "variableNoLigada.h"
 
 Almacen::Almacen(){
     this->variables = list<Variable*>();
@@ -13,8 +19,8 @@ string Almacen::imprimirAlmacen(){
     list<Variable*>:: iterator it;
 
     for(it = variables.begin(); it != variables.end(); it++){
-        cadena += *it->obtenerNombre() + "-> ";
-        cadena += *it->obtenerCadenaValor() + "\n";
+        cadena += (*it)->obtenerNombre() + "-> ";
+        cadena += (*it)->obtenerCadenaValor() + "\n";
     }
 
     return cadena;
@@ -23,7 +29,7 @@ string Almacen::imprimirAlmacen(){
 Variable* Almacen::consultarVariable(string nombre){
     list<Variable*>:: iterator it;
     for(it = variables.begin(); it != variables.end(); it++)
-        if(*it->obtenerNombre() == nombre)
+        if((*it)->obtenerNombre() == nombre)
             return *it;
     return NULL;
 }
@@ -36,22 +42,30 @@ bool Almacen::consultarLigadura(string nombre){
     return false;
 }
 
-void  Almacen::modificarVariable(string nombre, ValorOz oz){
+void  Almacen::modificarVariable(string nombre, ValorOz* oz){
     Variable* variable = consultarVariable(nombre);
     variable->modificarValor(oz);
 }
 
 void Almacen::agregarVariable(string nombre){
-    Variable* variable = new Variable(nombre, VariableNoLigada());
-    this->variables.push_back(&variable);
+    VariableNoLigada valorNoLigado;
+    VariableNoLigada* ptr = &valorNoLigado;
+
+    Variable nuevaVariable;
+    Variable* ptr2 = &nuevaVariable;
+
+    ptr2->modificarValor(ptr);
+    ptr2->modificarNombre(nombre);
+
+    this->variables.push_back(ptr2);
 }
 
-list<Variable> obtenerListaVariables(){
+list<Variable*> Almacen::obtenerListaVariables(){
     return this->variables;
 }
 
 /* TODO: 2019-05-12 Metodo de unificacion comenzarlo por lo menos */
-bool Almacen::unificarVariables(ValorOz valor1, ValorOz valor2){
+bool Almacen::unificarVariables(ValorOz* valor1, ValorOz* valor2){
     bool unificado = false;
 
 }
