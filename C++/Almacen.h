@@ -17,7 +17,6 @@ using namespace std;
 class Almacen{
     private:
         list<Variable*> variables;
-        set<Variable*> comparison;
     public:
         /* Constructores */
         Almacen();

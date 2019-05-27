@@ -10,11 +10,11 @@
 #include <iterator>
 #include <iostream>
 
-
 using namespace std;
 
 int main(){
     VariableNoLigada reg;
+
     cout << reg.obtenerCadenaValor() << endl;
 
     return 0;

@@ -10,6 +10,7 @@ class Variable: public ValorOz{
     private:
         ValorOz* valor;
         string nombre;
+        set<ValorOz*> comparison;
     public:
         /* Constructor */
         Variable();

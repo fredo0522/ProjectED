@@ -65,5 +65,5 @@ list<Variable*> Almacen::obtenerListaVariables(){
 /* TODO: 2019-05-12 Metodo de unificacion comenzarlo por lo menos */
 bool Almacen::unificarVariables(ValorOz* valor1, ValorOz* valor2){
     bool unificado = false;
-
 }
+
