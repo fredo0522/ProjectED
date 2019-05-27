@@ -7,7 +7,7 @@
 
 Variable::Variable(string name, ValorOz* valor){
     this->nombre = name;
-    this->valor = valor;
+    this->valor = valor;{}
     this->tipoDato = VARIABLE;
 }
 
@@ -32,6 +32,7 @@ void Variable::modificarValor(ValorOz* valor){
         VariableNoLigada* valorExacto = (VariableNoLigada*) valor;
         this->valor = valorExacto;
     }
+
 }
 
 string Variable::obtenerCadenaValor(){

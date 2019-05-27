@@ -42,7 +42,7 @@ bool Almacen::consultarLigadura(string nombre){
     return false;
 }
 
-void  Almacen::modificarVariable(string nombre, ValorOz* oz){
+void Almacen::modificarVariable(string nombre, ValorOz* oz){
     Variable* variable = consultarVariable(nombre);
     variable->modificarValor(oz);
 }

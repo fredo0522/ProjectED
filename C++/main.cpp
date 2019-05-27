@@ -21,13 +21,10 @@ int main(){
     list<Variable*> lista;
 
     Integer valor = Integer(10);
-    Variable* alejandro = Variable("Alejandro", (ValorOz)valor);
-    lista.push_back(alejandro);
+    Doble valorDouble = Doble(2.0);
 
     cout << valor.obtenerCadenaValor() << endl;
-    Almacen almacen = Almacen(lista);
-    cout << almacen.imprimirAlmacen() << endl;
-
+    cout << valorDouble.obtenerCadenaValor() << endl;
     return 0;
 }
 
