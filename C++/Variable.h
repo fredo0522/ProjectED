@@ -1,5 +1,4 @@
 #include "ValorOz.h"
-#include <set>
 #include <string>
 
 #ifndef __VARIABLE_H
@@ -11,7 +10,6 @@ class Variable: public ValorOz{
     private:
         ValorOz* valor;
         string nombre;
-        set<ValorOz*> comparison;
     public:
         /* Constructor */
         Variable();
@@ -26,6 +24,9 @@ class Variable: public ValorOz{
         /* Metodos modificadores */
         void modificarValor(ValorOz*);
         void modificarNombre(string);
+
+        /* Sobrecarga de operadores */
+        bool operator ==(Variable&);
 };
 
 #endif

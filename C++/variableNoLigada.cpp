@@ -17,3 +17,7 @@ string VariableNoLigada::obtenerValor(){
     return this->valor;
 }
 
+bool VariableNoLigada:: operator ==(VariableNoLigada& v){
+    return true;
+}
+

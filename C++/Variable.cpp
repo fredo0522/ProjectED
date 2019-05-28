@@ -4,13 +4,12 @@
 #include "Doble.h"
 #include "Register.h"
 #include "variableNoLigada.h"
-#include <set>
 
 Variable::Variable(){}
 
 Variable::Variable(string name, ValorOz* valor){
     this->nombre = name;
-    modificarValor(valor);
+    this->valor = valor;
     this->tipoDato = VARIABLE;
 }
 
@@ -22,28 +21,18 @@ void Variable::modificarValor(ValorOz* valor){
     if(valor->tipo() == ENTERO){
         Integer* valorExacto = (Integer*) valor;
         this->valor = valorExacto;
-        this->comparison.insert(valorExacto);
     }else if(valor->tipo() == DECIMAL){
         Doble* valorExacto = (Doble*) valor;
         this->valor = valorExacto;
-        this->comparison.insert(valorExacto);
     }else if (valor->tipo() == REGISTRO){
         Register* valorExacto = (Register*) valor;
         this->valor = valorExacto;
-        list<ValorOz*> campos = valorExacto->obtenerCampos();
-        list<ValorOz*>:: iterator it;
-        for(it = campos.begin(); it != campos.end(); it++){
-            comparison.insert(*it);
-        }
-
     }else if (valor->tipo() == VARIABLE){
         Variable* valorExacto = (Variable*) valor;
         this->valor = valorExacto;
-        this->comparison.insert(valorExacto);
     }else{
         VariableNoLigada* valorExacto = (VariableNoLigada*) valor;
         this->valor = valorExacto;
-        this->comparison.insert(valorExacto);
     }
 
 }
@@ -78,3 +67,12 @@ void Variable::modificarNombre(string name){
 char Variable::tipo(){
     return this->tipoDato;
 }
+
+bool Variable::operator ==(Variable& v){
+    if((obtenerValor())->tipo() == (v.obtenerValor())->tipo()){
+        if(obtenerValor() == v.obtenerValor()) return true;
+    }
+
+    return false;
+}
+

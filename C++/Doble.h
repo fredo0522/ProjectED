@@ -20,6 +20,9 @@ class Doble: public ValorOz{
 
         /* Modificadores */
         void modificarValor(double);
+
+        /* Sobrecarga de operadores */
+        bool operator ==(Doble&);
 };
 
 #endif

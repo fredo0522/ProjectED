@@ -20,3 +20,7 @@ void Doble::modificarValor(double valor){
 char Doble::tipo(){
     return tipoDato;
 }
+
+bool Doble::operator ==(Doble& d){
+    return obtenerValor() == d.obtenerValor();
+}

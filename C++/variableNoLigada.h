@@ -17,6 +17,9 @@ class VariableNoLigada: public ValorOz{
         char tipo();
         string obtenerCadenaValor();
         string obtenerValor();
+
+        /* Sobrecarga de operadores */
+        bool operator ==(VariableNoLigada&);
 };
 
 #endif

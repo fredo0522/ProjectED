@@ -21,7 +21,11 @@ class Register: public ValorOz{
         string obtenerCadenaValor();
         string obtenerEtiqueta();
         list<ValorOz*> obtenerCampos();
+        list<string> obtenerNombreCampos();
         char tipo();
+
+        /* Sobrecarga de operadores */
+        bool operator ==(Register&);
 };
 
 #endif

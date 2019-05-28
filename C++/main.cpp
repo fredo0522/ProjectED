@@ -6,7 +6,6 @@
 #include "Almacen.h"
 #include "variableNoLigada.h"
 #include <string>
-#include <set>
 #include <iostream>
 #include <list>
 #include <iterator>
@@ -17,7 +16,6 @@ using namespace std;
 
 int main(){
     string unification;
-
     while(cin >> unification && unification[0] != '#'){
 
     }

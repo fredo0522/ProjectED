@@ -20,3 +20,7 @@ void Integer::modificarValor(int valor){
 char Integer::tipo(){
     return tipoDato;
 }
+
+bool Integer::operator ==(Integer& i){
+    return this->obtenerValor() == i.obtenerValor();
+}

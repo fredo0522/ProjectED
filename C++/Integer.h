@@ -20,6 +20,9 @@ class Integer: public ValorOz{
 
         /* Modificadores */
         void modificarValor(int);
+
+        /* Sobrecarga de operadores */
+        bool operator ==(Integer&);
 };
 
 #endif

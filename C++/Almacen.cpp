@@ -64,7 +64,28 @@ list<Variable*> Almacen::obtenerListaVariables(){
 
 /* TODO: 2019-05-12 Metodo de unificacion comenzarlo por lo menos */
 bool Almacen::unificarVariables(ValorOz* valor1, ValorOz* valor2){
-    bool unificado = false;
-    
+    auto v1, v2;
+
+    if(valor1->tipo() == ENTERO) v1 = (Integer*) valor1;
+    else if(valor1->tipo() == DECIMAL) v1 = (Doble*) valor1;
+    else if(valor1->tipo() == REGISTRO) v1 = (Register*) valor1;
+    else if(valor1->tipo() == VARIABLE) v1 = (Variable*) valor1;
+    else v1 = (VariableNoLigada*) valor1;
+
+    if(valor2->tipo() == ENTERO) v2 = (Integer*) valor2;
+    else if(valor2->tipo() == DECIMAL) v2 = (Doble*) valor2;
+    else if(valor2->tipo() == REGISTRO) v2 = (Register*) valor2;
+    else if(valor2->tipo() == VARIABLE) v2 = (Variable*) valor2;
+    else v2 = (VariableNoLigada*) valor2;
+
+    if(v1->tipo() == v2->tipo()){
+        if(v1 == v2) return true;
+        else return false;
+    }else{
+
+    }
+
+
+
 }
 
