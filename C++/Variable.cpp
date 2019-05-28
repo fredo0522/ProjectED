@@ -4,6 +4,7 @@
 #include "Doble.h"
 #include "Register.h"
 #include "variableNoLigada.h"
+#include <set>
 
 Variable::Variable(){}
 
@@ -29,7 +30,7 @@ void Variable::modificarValor(ValorOz* valor){
     }else if (valor->tipo() == REGISTRO){
         Register* valorExacto = (Register*) valor;
         this->valor = valorExacto;
-        list<ValorOz*> campos = valorExacto->obtenerListaCampos();
+        list<ValorOz*> campos = valorExacto->obtenerCampos();
         list<ValorOz*>:: iterator it;
         for(it = campos.begin(); it != campos.end(); it++){
             comparison.insert(*it);

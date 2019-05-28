@@ -5,6 +5,8 @@
 #include "Integer.h"
 #include "Almacen.h"
 #include "variableNoLigada.h"
+#include <string>
+#include <set>
 #include <iostream>
 #include <list>
 #include <iterator>
@@ -12,10 +14,13 @@
 
 using namespace std;
 
-int main(){
-    VariableNoLigada reg;
 
-    cout << reg.obtenerCadenaValor() << endl;
+int main(){
+    string unification;
+
+    while(cin >> unification && unification[0] != '#'){
+
+    }
 
     return 0;
 }

@@ -1,4 +1,5 @@
 #include "ValorOz.h"
+#include <set>
 #include <string>
 
 #ifndef __VARIABLE_H
