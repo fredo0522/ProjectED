@@ -4,6 +4,7 @@
 #include "Integer.h"
 #include "Doble.h"
 #include "variableNoLigada.h"
+#include <iostream>
 
 Register::Register(string etiqueta, list<ValorOz*> campos, list<string> nombreCampos){
     this->etiqueta = etiqueta;
@@ -58,21 +59,6 @@ list<string> Register::obtenerNombreCampos(){
 
 char Register::tipo(){
     return this->tipoDato;
-}
-
-bool Register::camposIguales(Register* r){
-    list<string>:: iterator it1, it2;
-    for(it1 = obtenerNombreCampos().begin(); it1 != obtenerNombreCampos().end();
-            it1++){
-        bool exist = false;
-        for(it2 = r->obtenerNombreCampos().begin(); 
-                it2 != r->obtenerNombreCampos().end() && !exist; it2++){
-            if(*it1 == *it2) exist = true;
-        }
-
-        if(!exist) return false;
-    }
-    return true;
 }
 
 bool Register::operator ==(Register& r){

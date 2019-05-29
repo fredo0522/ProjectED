@@ -1,5 +1,8 @@
-v=2.1
+v=3
 t=10
 z=etiqueta(c1:10 c2:30 )
 y=nombreEtiqueta1(c1:10 c2:etiqueta(c1:10 c3:20 c1:2.2 ) c4:10 )
 w=_
+v=23
+w=etiqueta(c1:10 c2:30 )
+z=w

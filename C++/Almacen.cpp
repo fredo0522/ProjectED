@@ -80,7 +80,21 @@ bool Almacen::unificarVariables(ValorOz* valor1, ValorOz* valor2){
                 if((registro1->obtenerNombreCampos()).size() !=
                         (registro2->obtenerNombreCampos()).size()) return false;
 
-                if(registro1->camposIguales(registro2)){
+                bool same = true;
+                list<string>:: iterator iter1 = (registro1->obtenerNombreCampos()).begin();
+                list<string>:: iterator iter2 = (registro2->obtenerNombreCampos()).begin();
+
+                for(; iter1 != (registro1->obtenerNombreCampos()).end() && same; iter1++){
+                    bool exist = false;
+                    for(iter2 = (registro2->obtenerNombreCampos()).begin(); 
+                            iter2 != (registro2->obtenerNombreCampos()).end() &&
+                            !exist; iter2++){
+                        if(*iter1 == *iter2) exist = true;
+                    }
+                    if(!exist) same = false;
+                }
+
+                if(same){
                     int contador1 = 0, contador2 = 0;
                     list<string>:: iterator it1 = registro1->obtenerNombreCampos().begin();
                     list<string>:: iterator it2 = registro2->obtenerNombreCampos().begin();
@@ -94,11 +108,16 @@ bool Almacen::unificarVariables(ValorOz* valor1, ValorOz* valor2){
                                 list<ValorOz*>:: iterator itValor2 =
                                     registro2->obtenerCampos().begin();
 
-                                while(contador1--){
+                                bool flag1 = false, flag2 = false;
+                                while(!flag1){
+                                    if(contador1 == 0 ) flag1 = true;
+                                    contador1--;
                                     itValor1++;
                                 }
 
-                                while(contador2--){
+                                while(!flag2){
+                                    if(contador2 == 0) flag2 = false;
+                                    contador2--;
                                     itValor2++;
                                 }
 

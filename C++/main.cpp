@@ -43,7 +43,10 @@ ValorOz* convertirValor(string valorCadena, Almacen almacen){
         }
 
         if(!isRegister){
-            return new Variable(valorCadena, new VariableNoLigada);
+            Variable* alter = almacen.consultarVariable(valorCadena);
+            string nombre = alter->obtenerNombre();
+            ValorOz* valorAsig = alter->obtenerValor();
+            return new Variable(nombre, valorAsig);
         }else{
             string etiqueta = valorCadena.substr(0, valorCadena.find("(")), temp = "";
             list<string> nombreCampos;
@@ -108,11 +111,12 @@ int main(){
 
         if(confirmacion){
             cout << "Se hizo exitosamente la unificacion" << endl;
-            cout << almacen.imprimirAlmacen() << endl;
         }else{
             cout << "No se pudo hacer la unificacion" << endl;
         }
     }
+
+    cout << almacen.imprimirAlmacen() << endl;
 
     return 0;
 }
