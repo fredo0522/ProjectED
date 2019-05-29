@@ -13,11 +13,12 @@
 
 using namespace std;
 
-
 int main(){
     string unification;
-    while(cin >> unification && unification[0] != '#'){
+    Almacen almacen;
 
+    while(getline(cin, unification)){
+        cout << unification << endl;
     }
 
     return 0;

@@ -15,13 +15,15 @@ Almacen::Almacen(list<Variable*> variables){
 }
 
 string Almacen::imprimirAlmacen(){
-    string cadena = "";
+    string cadena = "-------------------------------------\n";
     list<Variable*>:: iterator it;
 
     for(it = variables.begin(); it != variables.end(); it++){
         cadena += (*it)->obtenerNombre() + " = ";
         cadena += (*it)->obtenerCadenaValor() + "\n";
     }
+
+    cadena += "-------------------------------------\n";
 
     return cadena;
 }
@@ -64,25 +66,41 @@ list<Variable*> Almacen::obtenerListaVariables(){
 
 /* TODO: 2019-05-12 Metodo de unificacion comenzarlo por lo menos */
 bool Almacen::unificarVariables(ValorOz* valor1, ValorOz* valor2){
-    auto v1, v2;
 
-    if(valor1->tipo() == ENTERO) v1 = (Integer*) valor1;
-    else if(valor1->tipo() == DECIMAL) v1 = (Doble*) valor1;
-    else if(valor1->tipo() == REGISTRO) v1 = (Register*) valor1;
-    else if(valor1->tipo() == VARIABLE) v1 = (Variable*) valor1;
-    else v1 = (VariableNoLigada*) valor1;
-
-    if(valor2->tipo() == ENTERO) v2 = (Integer*) valor2;
-    else if(valor2->tipo() == DECIMAL) v2 = (Doble*) valor2;
-    else if(valor2->tipo() == REGISTRO) v2 = (Register*) valor2;
-    else if(valor2->tipo() == VARIABLE) v2 = (Variable*) valor2;
-    else v2 = (VariableNoLigada*) valor2;
-
-    if(v1->tipo() == v2->tipo()){
-        if(v1 == v2) return true;
+    if(valor1->tipo() == valor2->tipo()){
+        if(valor1 == valor2) return true;
         else return false;
     }else{
+        if((valor1->tipo() == VARIABLE && valor2->tipo() == NO_LIGADO) ||
+          (valor2->tipo() == VARIABLE && valor1->tipo() == NO_LIGADO)) return true;
 
+        if(valor1->tipo() == VARIABLE && 
+                (((Variable*)valor1)->obtenerValor())->tipo() == NO_LIGADO &&
+                valor2->tipo() != NO_LIGADO && valor2->tipo() != VARIABLE){
+
+            Variable* consulta = consultarVariable(((Variable*)valor1)->obtenerNombre());
+
+            if(consulta != NULL){
+                modificarVariable(consulta->obtenerNombre(), valor2);
+                return true;
+            }
+            else
+                return false;
+        }
+
+        if(valor2->tipo() == VARIABLE && 
+                (((Variable*)valor2)->obtenerValor())->tipo() == NO_LIGADO &&
+                valor1->tipo() != NO_LIGADO && valor1->tipo() != VARIABLE){
+
+            Variable* consulta = consultarVariable(((Variable*)valor2)->obtenerNombre());
+
+            if(consulta != NULL){
+                modificarVariable(consulta->obtenerNombre(), valor1);
+                return true;
+            }
+            else
+                return false;
+        }
     }
 
 
