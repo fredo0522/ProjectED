@@ -43,7 +43,7 @@ ValorOz* convertirValor(string valorCadena, Almacen almacen){
         }
 
         if(!isRegister){
-           return almacen.consultarVariable(valorCadena);
+            return new Variable(valorCadena, new VariableNoLigada);
         }else{
             string etiqueta = valorCadena.substr(0, valorCadena.find("(")), temp = "";
             list<string> nombreCampos;
@@ -89,30 +89,28 @@ int main(){
         string valorCadena2 = unification.substr(unification.find("=") + 1,
                 unification.size() - 1);
 
+
         ValorOz* valor1 = convertirValor(valorCadena1, almacen);
         ValorOz* valor2 = convertirValor(valorCadena2, almacen);
 
-        /* if(valor2->tipo() == ENTERO) */
-        /*     cout << ((Integer*)valor2)->obtenerCadenaValor() << endl; */
-        /* else if(valor2->tipo() == DECIMAL) */
-        /*     cout << ((Doble*)valor2)->obtenerCadenaValor() << endl; */
-        /* else if(valor2->tipo() == REGISTRO) */
-        /*     cout << ((Register*)valor2)->obtenerCadenaValor() << endl; */
-        /* else if(valor2->tipo() == VARIABLE) */
-        /*     cout << ((Variable*)valor2)->obtenerCadenaValor() << endl; */
+        /* if(valor1->tipo() == ENTERO) */
+        /*     cout << ((Integer*)valor1)->obtenerCadenaValor() << endl; */
+        /* else if(valor1->tipo() == DECIMAL) */
+        /*     cout << ((Doble*)valor1)->obtenerCadenaValor() << endl; */
+        /* else if(valor1->tipo() == REGISTRO) */
+        /*     cout << ((Register*)valor1)->obtenerCadenaValor() << endl; */
+        /* else if(valor1->tipo() == VARIABLE) */
+        /*     cout << ((Variable*)valor1)->obtenerCadenaValor() << endl; */
         /* else */
-        /*     cout << ((VariableNoLigada*)valor2)->obtenerCadenaValor() << endl; */
-
-
+        /*     cout << ((VariableNoLigada*)valor1)->obtenerCadenaValor() << endl; */
 
         bool confirmacion = almacen.unificarVariables(valor1, valor2);
 
         if(confirmacion){
             cout << "Se hizo exitosamente la unificacion" << endl;
-            /* cout << almacen.imprimirAlmacen() << endl; */
+            cout << almacen.imprimirAlmacen() << endl;
         }else{
             cout << "No se pudo hacer la unificacion" << endl;
-            /* cout << almacen.imprimirAlmacen() << endl; */
         }
     }
 

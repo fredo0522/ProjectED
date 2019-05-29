@@ -64,7 +64,6 @@ list<Variable*> Almacen::obtenerListaVariables(){
     return this->variables;
 }
 
-/* TODO: 2019-05-12 Metodo de unificacion comenzarlo por lo menos */
 bool Almacen::unificarVariables(ValorOz* valor1, ValorOz* valor2){
 
     if(valor1->tipo() == valor2->tipo()){
@@ -85,6 +84,7 @@ bool Almacen::unificarVariables(ValorOz* valor1, ValorOz* valor2){
                     int contador1 = 0, contador2 = 0;
                     list<string>:: iterator it1 = registro1->obtenerNombreCampos().begin();
                     list<string>:: iterator it2 = registro2->obtenerNombreCampos().begin();
+
                     for(; it1 != registro1->obtenerNombreCampos().end(); it1++){
                         for(; it2 != registro2->obtenerNombreCampos().end(); it2++){
                             if(*it1 == *it2){
