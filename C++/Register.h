@@ -23,6 +23,7 @@ class Register: public ValorOz{
         list<ValorOz*> obtenerCampos();
         list<string> obtenerNombreCampos();
         char tipo();
+        bool camposIguales(Register*);
 
         /* Sobrecarga de operadores */
         bool operator ==(Register&);
