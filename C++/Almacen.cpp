@@ -160,6 +160,7 @@ bool Almacen::unificarVariables(ValorOz* valor1, ValorOz* valor2){
                 (((Variable*)valor1)->obtenerValor())->tipo() == NO_LIGADO && 
                 valor2->tipo() == VARIABLE && 
                 (((Variable*)valor2)->obtenerValor())->tipo() != NO_LIGADO){
+
             Variable* consulta1 = consultarVariable(((Variable*)valor1)->obtenerNombre());
             Variable* consulta2 = consultarVariable(((Variable*)valor2)->obtenerNombre());
             modificarVariable(consulta1->obtenerNombre(), consulta2->obtenerValor());
@@ -170,6 +171,7 @@ bool Almacen::unificarVariables(ValorOz* valor1, ValorOz* valor2){
                 (((Variable*)valor2)->obtenerValor())->tipo() == NO_LIGADO && 
                 valor1->tipo() == VARIABLE && 
                 (((Variable*)valor1)->obtenerValor())->tipo() != NO_LIGADO){
+
             Variable* consulta1 = consultarVariable(((Variable*)valor1)->obtenerNombre());
             Variable* consulta2 = consultarVariable(((Variable*)valor2)->obtenerNombre());
             modificarVariable(consulta2->obtenerNombre(), consulta1->obtenerValor());
