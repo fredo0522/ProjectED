@@ -96,24 +96,21 @@ int main(){
         ValorOz* valor1 = convertirValor(valorCadena1, almacen);
         ValorOz* valor2 = convertirValor(valorCadena2, almacen);
 
-        /* if(valor1->tipo() == ENTERO) */
-        /*     cout << ((Integer*)valor1)->obtenerCadenaValor() << endl; */
-        /* else if(valor1->tipo() == DECIMAL) */
-        /*     cout << ((Doble*)valor1)->obtenerCadenaValor() << endl; */
-        /* else if(valor1->tipo() == REGISTRO) */
-        /*     cout << ((Register*)valor1)->obtenerCadenaValor() << endl; */
-        /* else if(valor1->tipo() == VARIABLE) */
-        /*     cout << ((Variable*)valor1)->obtenerCadenaValor() << endl; */
-        /* else */
-        /*     cout << ((VariableNoLigada*)valor1)->obtenerCadenaValor() << endl; */
+        // if(valor1->tipo() == ENTERO)
+        //      cout << ((Integer*)valor1)->obtenerCadenaValor() << endl;
+        // else if(valor1->tipo() == DECIMAL)
+        //     cout << ((Doble*)valor1)->obtenerCadenaValor() << endl;
+        // else if(valor1->tipo() == REGISTRO)
+        //     cout << ((Register*)valor1)->obtenerCadenaValor() << endl;
+        //  else if(valor1->tipo() == VARIABLE)
+        //     cout << ((Variable*)valor1)->obtenerCadenaValor() << endl;
+        //  else
+        //     cout << ((VariableNoLigada*)valor1)->obtenerCadenaValor() << endl; 
 
         bool confirmacion = almacen.unificarVariables(valor1, valor2);
 
-        if(confirmacion){
-            cout << "Se hizo exitosamente la unificacion" << endl;
-        }else{
-            cout << "No se pudo hacer la unificacion" << endl;
-        }
+        if(confirmacion) cout << "Se hizo exitosamente la unificacion" << endl;
+        else cout << "No se pudo hacer la unificacion" << endl;
     }
 
     cout << almacen.imprimirAlmacen() << endl;
