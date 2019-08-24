@@ -12,7 +12,7 @@
 
 using namespace std;
 
-class ValorOz{
+class ValorOz {
     protected:
         char tipoDato;
     public:
