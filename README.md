@@ -1,5 +1,5 @@
 # ProjectED
-A pseudo-interpreter for Mozart language write in C++.
+A pseudo-interpreter for Mozart language writen in C++.
 
 ## Authors:
   - Luis Alfredo Rodriguez<br>
